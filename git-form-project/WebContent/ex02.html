@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<title>Insert title here</title>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+ <style>
+	 /* Make the image fully responsive */
+	 .carousel-inner img {
+	   width: 100%;
+	   height: 100%;
+	 }
+ </style>
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+	<div class="container">
+		<div class="row">
+		  <div class="col-sm-8">
+		  		<!-- 탭 -->
+			 	<ul class="nav nav-tabs">
+			  	</li>
+			  	<li class="nav-item">
+			    	<a class="nav-link" data-toggle="tab" href="#menu1">Menu 1</a>
+			  	</li>
+			  	<li class="nav-item">
+			    	<a class="nav-link" data-toggle="tab" href="#menu2">Menu 2</a>
+			  	</li>
+				</ul>
+			
+			<!-- Tab panes -->
+			<div class="tab-content">
+			  <div class="tab-pane container" id="menu1">...</div>
+			  <div class="tab-pane container" id="menu2">
+				  <!-- 시(도) 선택버튼 -->
+				  <div>
+					  <button id="btnSeoul" class="btn btn-info">서울</button>
+					  <button id="btnIncheon" class="btn btn-info">인천</button>
+					  <button id="btnGyeonggi" class="btn btn-info">경기</button>
+					  <button id="btnGangwon" class="btn btn-info">강원</button>
+					  <button id="btnChungnam" class="btn btn-info">충남</button>
+					  <button id="btnSejong" class="btn btn-info">세종</button>
+					  <button id="btnChungbuk" class="btn btn-info">충북</button>
+					  <button id="btnDaejeon" class="btn btn-info">대전</button>
+					  <button id="btnDaegu" class="btn btn-info">대구</button>
+					  <button id="btnKyungbuk" class="btn btn-info">경북</button>
+					  <button id="btnJeonbuk" class="btn btn-info">전북</button>
+					  <button id="btnGwangju" class="btn btn-info">광주</button>
+					  <button id="btnJeonnam" class="btn btn-info">전남</button>
+					  <button id="btnJeju" class="btn btn-info">제주</button>
+					  <button id="btnUlsan" class="btn btn-info">울산</button>
+					  <button id="btnGyeongnam" class="btn btn-info">경남</button>
+					  <button id="btnBusan" class="btn btn-info">부산</button>
+					  
+				  </div>
+				  <div>
+			  		
+					<div class="form-group">
+						<!-- 선택시(도) -->
+						<label id="targetLabel" for="comment"></label>
+						<!-- 선택시(도) 항목 -->
+						<textarea id="targetTextarea" class="form-control" rows="5"></textarea>
+						<button class="btn btn-secondary">검색</button>
+					</div>
+			  	</div>
+			  </div>
+			</div>
+		  </div>
+		  <!-- 배너 -->
+		  <div class="col-sm-4">
+		  
+		  <!-- 배너 -->
+		  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+  <!-- Indicators -->
+  <ul class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+  </ul>
+  
+  <!-- The slideshow -->
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="la.jpg" alt="Los Angeles" width="1100" height="500">
+    </div>
+    <div class="carousel-item">
+      <img src="chicago.jpg" alt="Chicago" width="1100" height="500">
+    </div>
+    <div class="carousel-item">
+      <img src="ny.jpg" alt="New York" width="1100" height="500">
+    </div>
+  </div>
+  
+  <!-- Left and right controls -->
+  <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#myCarousel" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+</div>
+		  
+		  
+		  </div>
+		</div>		
+	
+	</div>
+
+</body>
+<script>
+	$('#btnSeoul').click(function(){
+		console.log('#btnSeoul click');
+		$('#targetLabel').text('서울');
+		let str = '';
+		str += '강남구';
+		str += '\t강동구';
+		str += '\n강북구';
+		str += '\t강서구';
+		str += '\n관악구';
+		str += '\t광진구';
+		str += '\n구로구';
+		str += '\t금천구';
+		str += '\n노원구';
+		str += '\t도봉구';
+		str += '\n동대문구';
+		str += '\t동작구';
+		str += '\n마포구';
+		str += '\t서대문구';
+		str += '\n서초구';
+		str += '\t성동구';
+		str += '\n성북구';
+		str += '\t송파구';
+		str += '\n양천구';
+		str += '\t영등포구';
+		str += '\n용산구';
+		str += '\t은평구';
+		str += '\n종로구';
+		str += '\t중 구';
+		str += '\n중랑구';
+		$('#targetTextarea').val(str);		
+	});
+	$('#btnIncheon').click(function(){
+		console.log('#btnIncheon click');
+		$('#targetLabel').text('인천');
+		let str = '';
+		str += '강화구';
+		str += '\t계양구';
+		str += '\n남동구';
+		str += '\t동 구';
+		str += '\n미추홀구';
+		str += '\t부평구';
+		str += '\n서 구';
+		str += '\t연수구';
+		str += '\n옹진군';
+		str += '\t중 구';
+		$('#targetTextarea').val(str);		
+	});
+	$('#btnGyeonggi').click(function(){
+		console.log('#btnGyeonggi click');
+		$('#targetLabel').text('경기');
+		let str = '';
+		str += '가평군';
+		str += '\t고양시 덕양구';
+		str += '\n고양시 일산구';
+		str += '\t고양시 일산동구';
+		str += '\n고양시 일산서구';
+		str += '\t고양시';
+		str += '\n과천시';
+		str += '\t광명시';
+		str += '\n광주시';
+		str += '\t구리시';
+		str += '\n군포시';
+		str += '\t김포시';
+		str += '\n남양주시';
+		str += '\t동두천시';
+		str += '\n부천시';
+		str += '\t성남시 분당구';
+		str += '\n성남시 수정구';
+		str += '\t성남시 중원구';
+		str += '\n성남시';
+		str += '\t수원시 권선구';
+		str += '\n수원시 영통구';
+		str += '\t수원시 장안구';
+		str += '\n수원시 팔달구';
+		str += '\t수원시';
+		str += '\n시흥시';
+		str += '\t안산시 단원구';
+		str += '\n안산시 상록구';
+		str += '\t안산시';
+		str += '\n안성시';
+		str += '\t안양시 동안구';
+		str += '\n안양시 만안구';
+		str += '\t안양시';
+		str += '\n양주군';
+		str += '\t양주시';
+		str += '\n양평군';
+		str += '\t여주시';
+		str += '\n연천군';
+		str += '\t오산시';
+		str += '\n용인시 기흥구';
+		str += '\t용인시 수지구';
+		str += '\n용인시 처인구';
+		str += '\t용인시';
+		str += '\n의왕시';
+		str += '\t의정부시';
+		str += '\n이천시';
+		str += '\t파주시';
+		str += '\n평택시';
+		str += '\t포천군';
+		str += '\n포천시';
+		str += '\t하남시';
+		str += '\n화성시';		
+		$('#targetTextarea').val(str);		
+	});	
+	$('#btnGangwon').click(function(){
+		console.log('#btnGangwon click');
+		$('#targetLabel').text('강원');
+		let str = '';
+		str += '강릉시';
+		str += '\t고성군';
+		str += '\n동해시';
+		str += '\t삼척시';
+		str += '\n속초시';
+		str += '\t양구군';
+		str += '\n양양군';
+		str += '\t영월군';
+		str += '\n원주시';
+		str += '\t인제군';
+		str += '\n정선군';
+		str += '\t철원군';
+		str += '\n춘천시';
+		str += '\t태백시';
+		str += '\n평창군';
+		str += '\t홍천군';
+		str += '\n화천군';
+		str += '\t횡성군';
+		$('#targetTextarea').val(str);		
+	});	
+	$('#btnChungnam').click(function(){
+		console.log('#btnChungnam click');
+		$('#targetLabel').text('충남');
+		let str = '';
+		str += '계룡시';
+		str += '\t공주시';
+		str += '\n금산군';
+		str += '\t논산시';
+		str += '\n당진군';
+		str += '\t당진시';
+		str += '\n보령시';
+		str += '\t부여군';
+		str += '\n서산시';
+		str += '\t서천군';
+		str += '\n아산시';
+		str += '\t연기군';
+		str += '\n예산군';
+		str += '\t천안시 동남구';
+		str += '\n천안시 서북구';
+		str += '\t천안시';
+		str += '\n청양군';
+		str += '\t태안군';
+		str += '\n홍성군';
+		$('#targetTextarea').val(str);		
+	});	
+	$('#btnSejong').click(function(){
+		console.log('#btnSejong click');
+		$('#targetLabel').text('세종');
+		let str = '';
+		str += '세종';
+		$('#targetTextarea').val(str);		
+	});
+	$('#btnChungbuk').click(function(){
+		console.log('#btnChungbuk click');
+		$('#targetLabel').text('충북');
+		let str = '';
+		str += '\n괴산군';
+		str += '\t단양군';
+		str += '\n보은군';
+		str += '\t영동군';
+		str += '\n옥천군';
+		str += '\t음성군';
+		str += '\n제천시';
+		str += '\t증평군';
+		str += '\n진천군';
+		str += '\t청원군';
+		str += '\n청주시 상당구';
+		str += '\t청주시 서원구';
+		str += '\n청주시 흥덕구';
+		str += '\t청주시';
+		str += '\n충주시';
+		$('#targetTextarea').val(str);		
+	});	
+	$('#btnDaejeon').click(function(){
+		console.log('#btnDaejeon click');
+		$('#targetLabel').text('대전');
+		let str = '';
+		str += '대덕구';
+		str += '\t동구';
+		str += '\n서 구';
+		str += '\t유성구';
+		str += '\n중구';		
+		$('#targetTextarea').val(str);		
+	});
+	$('#btnDaegu').click(function(){
+		console.log('#btnDaegu click');
+		$('#targetLabel').text('대구');
+		let str = '';
+		str += '남 구';
+		str += '\t당서구';
+		str += '\n달성군';
+		str += '\t동 구';
+		str += '\n북 구';
+		str += '\t서 구';
+		str += '\n수성구';
+		str += '\t중 구';		
+		$('#targetTextarea').val(str);		
+	});
+	$('#btnKyungbuk').click(function(){
+		console.log('#btnKyungbuk click');
+		$('#targetLabel').text('경북');
+		let str = '';
+		str += '경산시';
+		str += '\t경주시';
+		str += '\n고령군';
+		str += '\t구미시';
+		str += '\n군위군';		
+		str += '\t김천시';
+		str += '\n문경시';
+		str += '\t봉화군';
+		str += '\n상주시';
+		str += '\t성주군';
+		str += '\n안동시';
+		str += '\t영덕군';
+		str += '\n영양군';
+		str += '\t영주시';
+		str += '\n영천시';
+		str += '\t예천군';
+		str += '\n울릉군';
+		str += '\t울진군';
+		str += '\n의성군';
+		str += '\t청도군';
+		str += '\n청송군';
+		str += '\t칠곡군';
+		str += '\n포항시 남구';
+		str += '\t포항시 북구';
+		str += '\n포항시';
+		$('#targetTextarea').val(str);		
+	});	
+	$('#btnJeonbuk').click(function(){
+		console.log('#btnJeonbuk click');
+		$('#targetLabel').text('전북');
+		let str = '';
+		str += '고창군';
+		str += '\t군산시';
+		str += '\n김제시';
+		str += '\t남원시';
+		str += '\n무주군';		
+		str += '\t부안군';
+		str += '\n순창군';		
+		str += '\t완주군';
+		str += '\n익산시';		
+		str += '\t임실군';
+		str += '\n장수군';		
+		str += '\t전주시 덕진구';
+		str += '\n전주시 완산구';		
+		str += '\t전주시';
+		str += '\n정읍시';		
+		str += '\t진안군';
+		$('#targetTextarea').val(str);		
+	});	
+	$('#btnGwangju').click(function(){
+		console.log('#btnGwangju click');
+		$('#targetLabel').text('광주');
+		let str = '';
+		str += '광산구';
+		str += '\t남 구';
+		str += '\n동 구';
+		str += '\t북 구';
+		str += '\n서 구';
+		$('#targetTextarea').val(str);		
+	});
+	$('#btnJeonnam').click(function(){
+		console.log('#btnJeonnam click');
+		$('#targetLabel').text('전남');
+		let str = '';
+		str += '강진군';
+		str += '\t고흥군';
+		str += '\n곡성군';
+		str += '\t광양시';
+		str += '\n구례군';		
+		str += '\t나주시';
+		str += '\n담양군';		
+		str += '\t목포시';
+		str += '\n무안군';		
+		str += '\t보성군';
+		str += '\n순천시';		
+		str += '\t신안군';
+		str += '\n여수시';		
+		str += '\t영광군';
+		str += '\n영암군';		
+		str += '\t완도군';
+		str += '\n장성군';		
+		str += '\t장흥군';
+		str += '\n진도군';		
+		str += '\함평군';
+		str += '\n해남군';		
+		str += '\t화순군';
+		$('#targetTextarea').val(str);		
+	});	
+	$('#btnJeju').click(function(){
+		console.log('#btnJeju click');
+		$('#targetLabel').text('제주');
+		let str = '';
+		str += '서귀포시';
+		str += '\t제주시';
+		$('#targetTextarea').val(str);		
+	});
+	$('#btnUlsan').click(function(){
+		console.log('#btnUlsan click');
+		$('#targetLabel').text('울산');
+		let str = '';
+		str += '남 구';
+		str += '\t동 구';
+		str += '\n북 구';
+		str += '\t울주군';
+		str += '\n중 구';
+		$('#targetTextarea').val(str);		
+	});
+	$('#btnGyeongnam').click(function(){
+		console.log('#btnGyeongnam click');
+		$('#targetLabel').text('경남');
+		let str = '';
+		str += '거제시';
+		str += '\t거창군';
+		str += '\n고성군';
+		str += '\t김해시';
+		str += '\n남해군';		
+		str += '\t밀양시';
+		str += '\n사천시';		
+		str += '\t산청군';
+		str += '\n양산시';		
+		str += '\t의령군';
+		str += '\n진주시';		
+		str += '\t창녕군';
+		str += '\n창원시 마산합포구';		
+		str += '\t창원시 마산회원구';
+		str += '\n창원시 성산구 ';		
+		str += '\t창원시 의창구';
+		str += '\n창원시 진해구';		
+		str += '\t창원시';
+		str += '\n통영시';		
+		str += '\t하동군';
+		str += '\n함안군';		
+		str += '\t함양군';
+		str += '\n합천군';		
+		$('#targetTextarea').val(str);		
+	});	
+	$('#btnBusan').click(function(){
+		console.log('#btnBusan click');
+		$('#targetLabel').text('부산');
+		let str = '';
+		str += '강서구';
+		str += '\t금정구';
+		str += '\n기장군';
+		str += '\t남 구';
+		str += '\n동 구';		
+		str += '\t동래구';
+		str += '\n부산진구';		
+		str += '\t북구';
+		str += '\n사상구';		
+		str += '\t사하구';
+		str += '\n서구';		
+		str += '\t수영구';
+		str += '\n연제구';		
+		str += '\t영도구';
+		str += '\n중구';		
+		str += '\t해운대구';
+		$('#targetTextarea').val(str);		
+	});
+</script>
+</html>
+
+
+
+
+
+
+
+
+
+
