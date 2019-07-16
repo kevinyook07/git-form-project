@@ -15,8 +15,13 @@
 	 }
  </style>
 
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+
+
 <!-- jQuery library -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
 <!-- Popper JS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
@@ -42,7 +47,21 @@
 			
 			<!-- Tab panes -->
 			<div class="tab-content">
-			  <div class="tab-pane container" id="menu1">...</div>
+			  
+			  <!-- 첫번째 탭 -->
+			  <a id="tip" href="#" data-toggle="popover" title="Popover Header" data-content="국가기간산업이나...">
+			  	<span class="badge badge-secondary">Tip
+			  </a>
+			  
+			  <div>
+			  	<input id="beginDate" type="text">
+			  	<input id="endDate" type="text">
+			  	<button id="btnWeek">1주일</button>
+			  	<button id="btnMonth">1개월</button>
+			  	<button id="btn3Month">3개월</button>
+			  </div>
+			  
+			  <!-- 두번째 탭 -->
 			  <div class="tab-pane container" id="menu2">
 				  <!-- 시(도) 선택버튼 -->
 				  <div>
@@ -121,6 +140,49 @@
 
 </body>
 <script>
+	$('#beginDate').datepicker(
+	{
+	      showOn: "button",
+	      buttonImage: "./date.png",
+	      buttonImageOnly: true,
+	      buttonText: "Select date"
+	    });
+	
+	$('#beginDate').datepicker('option','dateFormat','yy-mm-dd');
+	
+	$('#endDate').datepicker(
+	{
+	      showOn: "button",
+	      buttonImage: "./date.png",
+	      buttonImageOnly: true,
+	      buttonText: "Select date"
+	    });
+	
+	$('#endDate').datepicker('option','dateFormat','yy-mm-dd');
+	
+	
+	let d = new Date();
+	let year = d.getFullYear();
+	let month = d.getMonth()+1;
+	let day = d.getDate();
+	console.log(year);
+	console.log(month);
+	console.log(day);
+	$('#beginDate').val(`${year}-${month}-${day}`);
+	$('#endDate').val(`${year}-${month}-${day}`);
+	
+	let beginDate = d;
+	let endDate = d;
+	$('#btnWeek').click(function(){
+		endDate.setDate(beginDate.getDate() + 7); 
+		$('#endDate').val(`${endDate.getFullYear}-${endDate.getMonth}-${endDate.getDay}`);
+	});
+	
+	
+	
+	
+	$('#tip').popover();
+
 	$('#btnSeoul').click(function(){
 		console.log('#btnSeoul click');
 		$('#targetLabel').text('서울');
@@ -491,13 +553,3 @@
 	});
 </script>
 </html>
-
-
-
-
-
-
-
-
-
-
